@@ -15,7 +15,7 @@ Para testar no REPL
 val bd =
     listOf<Video>(
         Video("Tipos Mortais", false, 972, 15),
-        Video("Variáveis assassinas", true, 571, 403),
+        Video("Variáveis assassinas", true, 571, 73),
         Video("Objetos renegados", true, 701, 152),
         Video("Guerra das classes", true, 208, 70),
         Video("Ponteiros para o infinito", false, 0, 0)
@@ -46,3 +46,33 @@ res1.max()
 
 fun curtidas_video_publico_mais_curtido(lst : List<Video>) : Int? =
     lst.filter { it.ehPublico }.map { it.joias }.max()
+
+/*
+Qual é o vídeo com maio relação joinhas/visualizações?
+
+1) Tuplas (pares)
+
+>>> Video("Forró arraytado", true, 1000, 100)
+res0: Video = Video(nome = Forró......
+>>> res0.nome to res0.joias
+res1: Pair<String,Int> = (Forró arraytado, 100)
+>>> res1.first
+res2: String = Forró arraytado
+>>> res1.second
+res3: Int = 100
+>>> bd.map {it.nome to it.joias.toDouble()/(it.visualizacoes + 1)}
+res4: List<Pair<String,Int>> = [(Tipos Mortais, 0.01154, (Variáveis assassinas, 0.1276), .......
+>>> res4.maxBy { it.second }
+res5: Pair<String,Int>? = (Guerra das classes, 0.3349)
+>>> res5?.first
+res6: String? = Guerra das classes
+ */
+
+fun video_maior_relacao_joias_vis (lst : List<Video>) =
+    lst.map{ it.nome to it.joias.toDouble()/(it.visualizacoes + 1)}
+        .maxBy{ it.second }
+        ?.first
+
+fun main() {
+    println(video_maior_relacao_joias_vis(bd))
+}
