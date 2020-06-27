@@ -11,3 +11,17 @@ Para testar no REPL
 4. Continue: res0.nome
 
  */
+
+val bd =
+    listOf<Video>(
+        Video("Tipos Mortais", false, 972, 15),
+        Video("Variáveis assassinas", true, 1571, 403),
+        Video("Objetos renegados", true, 701, 452),
+        Video("Guerra das classes", true, 208, 70),
+        Video("Ponteiros para o infinito", false, 0, 0)
+    )
+
+/*
+No REPL: digite `bd` para carregar a lista com um `res`
+ */
+
