@@ -26,7 +26,7 @@ Para testar no REPL
  */
 
 val bd =
-    listOf<Video>(
+    listOf(
         Video("Tipos mortais", false, 972, 15),
         Video("Variáveis assassinas", true, 571, 73),
         Video("Objetos renegados", true, 701, 152),
@@ -59,7 +59,7 @@ res0: ...
 res1: ...
  */
 
-fun total_visualizacoes(lst: List<Video>) : Int = lst.map {it.visualizacoes}.sum()
+fun totalVisualizacoes(lst: List<Video>) : Int = lst.map {it.visualizacoes}.sum()
 
 /*
 Qual é a maior quantidade de joinhas entre os vídeos públicos?
@@ -72,7 +72,7 @@ res1: ...
 res2: ...
  */
 
-fun curtidas_video_publico_mais_curtido(lst : List<Video>) : Int? =
+fun curtidasVideoPublicoMaisCurtido(lst : List<Video>) : Int? =
     lst.filter { it.ehPublico }.map { it.joias }.max()
 
 /*
@@ -96,11 +96,13 @@ res5: Pair<String,Int>? = (Guerra das classes, 0.3349)
 res6: String? = Guerra das classes
  */
 
-fun video_maior_relacao_joias_vis (lst : List<Video>) =
+fun videoMaiorRelacaoJoiasVistas (lst : List<Video>) =
     lst.map{ it.nome to it.joias.toDouble()/(it.visualizacoes + 1)}
         .maxBy{ it.second }
         ?.first
 
 fun main() {
-    println(video_maior_relacao_joias_vis(bd))
+    println(totalVisualizacoes(bd))
+    println(curtidasVideoPublicoMaisCurtido(bd))
+    println(videoMaiorRelacaoJoiasVistas(bd))
 }
