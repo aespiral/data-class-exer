@@ -1,6 +1,6 @@
 /*
  Código: https://github.com/aespiral/data-class-exer/tree/exemplo/src
- Vídeo: https://youtube.com
+ Vídeo: https://youtu.be/ApIO_s9x9QQ
  */
 
 
@@ -20,7 +20,7 @@ https://kotlinlang.org/docs/reference/data-classes.html
 /*
 Salve na pasta src
 
-Para testar no REPL
+Para testar no REPL (Read Eval Print Loop)
 1. Build > Build Project
 2. Tools > Kotlin > Kotlin REPL
 3. Na área de texto, digite: Video("Dark", true, 145, 45)
@@ -58,7 +58,7 @@ Qual é o total de visualizações?
 
 >>> bd.map {it.visualizacoes}
 res0: ...
->>>res0.sum()
+>>> res0.sum()
 res1: ...
  */
 
@@ -79,7 +79,7 @@ fun curtidasVideoPublicoMaisCurtido(lst : List<Video>) : Int? =
     lst.filter { it.ehPublico }.map { it.joias }.max()
 
 /*
-Qual é o vídeo com maio relação joinhas/visualizações?
+Qual é o vídeo com maior relação joinhas/visualizações?
 
 1) Tuplas (pares)
 

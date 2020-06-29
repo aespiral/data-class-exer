@@ -16,3 +16,4 @@
     * Use o REPL como apoio para testar as ideias
     
 Veja o _branch_ `exemplo` 
+https://youtu.be/ApIO_s9x9QQ
